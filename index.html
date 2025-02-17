@@ -3,11 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Doctor</title>
+    <title>solloh_assignment</title>
     <!-- --animation  -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- --icon-- -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
     <!-- --style link-- -->
     <link rel="stylesheet" href="assets/css/fonts.css" />
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
@@ -17,22 +20,24 @@
     <!-- --herosection--start -->
     <section class="hero-sec">
       <div class="video-container">
-        <img
-          id="banner-img"
-          src="assets/images/banner.jpg"
-          alt="Banner Image"
-        />
-        <video id="hero-video" muted>
-          <source src="assets/images/video.mp4" type="video/mp4" />
-        </video>
+        <div class="video-container">
+          <video id="hero-video" autoplay muted loop>
+            <source src="assets/images/video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div> 
       </div>
       <div class="container">
         <div class="hero-content">
           <h2 data-aos="fade-up">Welcome to B+A</h2>
           <h2 data-aos="fade-up">Medical Center</h2>
-        
-          <a id="play-btn" class="video-play-button play-btn" href="#" data-aos="fade-up">
-            <span><i class="fas fa-play"></i></span>
+          <a
+            id="play-btn"
+            class="video-play-button play-btn"
+            href="#"
+            data-aos="fade-up"
+          >
+            <span><i class="fas fa-pause"></i></span>
           </a>
         </div>
       </div>
@@ -138,33 +143,25 @@
         anchorPlacement: "top-bottom",
       });
     </script>
-   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const video = document.getElementById("hero-video");
-      const playBtn = document.getElementById("play-btn");
-      const icon = playBtn.querySelector("i"); // Select the icon inside the button
-      const banner = document.getElementById("banner-img");
-  
-      playBtn.addEventListener("click", function (e) {
-        e.preventDefault();
-  
-        if (video.paused) {
-          banner.style.opacity = "0";
-          setTimeout(() => {
-            banner.style.display = "none";
-          }, 500);
-  
-          video.style.display = "block";
-          video.play();
-          icon.classList.remove("fa-play"); // Remove play icon
-          icon.classList.add("fa-pause"); // Add pause icon
-        } else {
-          video.pause();
-          icon.classList.remove("fa-pause"); // Remove pause icon
-          icon.classList.add("fa-play"); // Add play icon
-        }
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const video = document.getElementById("hero-video");
+        const playBtn = document.getElementById("play-btn");
+        const icon = playBtn.querySelector("i");
+
+        playBtn.addEventListener("click", function (e) {
+          e.preventDefault();
+          if (video.paused) {
+            video.play();
+            icon.classList.remove("fa-play");
+            icon.classList.add("fa-pause");
+          } else {
+            video.pause();
+            icon.classList.remove("fa-pause");
+            icon.classList.add("fa-play");
+          }
+        });
       });
-    });
-  </script>
-  </body>
+    </script>
+  </body> 
 </html>
